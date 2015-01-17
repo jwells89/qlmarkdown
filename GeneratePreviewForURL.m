@@ -15,7 +15,7 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
     NSData *data = renderMarkdown((__bridge NSURL*) url);
 
     if (data) {
-		NSDictionary *props = [NSDictionary dictionary];
+		NSDictionary *props = @{};
         QLPreviewRequestSetDataRepresentation(preview, (__bridge CFDataRef)data, kUTTypeHTML, (__bridge CFDictionaryRef)props);
     }
 

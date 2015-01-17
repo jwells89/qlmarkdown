@@ -24,7 +24,7 @@ NSData* renderMarkdown(NSURL* url)
                                                  "<style>%@</style>"
                                                  "<base href=\"%@\"/>"
                                                  "%@",
-                                                 styles, url, [NSString stringWithUTF8String:output]];
+                                                 styles, url, @(output)];
 
     free(output);
     return [html dataUsingEncoding:NSUTF8StringEncoding];
