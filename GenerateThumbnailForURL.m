@@ -23,11 +23,10 @@ OSStatus GenerateThumbnailForURL(void *thisInterface,
 
     if (data) {
 		NSRect viewRect = NSMakeRect(0.0, 0.0, 600.0, 800.0);
-		float scale = maxSize.height / 800.0;
+		CGFloat scale = maxSize.height / 800.0;
 		NSSize scaleSize = NSMakeSize(scale, scale);
-		CGSize thumbSize = NSSizeToCGSize(
-                            NSMakeSize((maxSize.width * (600.0/800.0)), 
-                                       maxSize.height));
+		CGSize thumbSize = NSMakeSize((maxSize.width * (600.0/800.0)),
+									  maxSize.height);
 
         WebView* webView = [[WebView alloc] initWithFrame: viewRect];
 		[webView scaleUnitSquareToSize: scaleSize];
