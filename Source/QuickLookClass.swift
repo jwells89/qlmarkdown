@@ -15,7 +15,6 @@ import WebKit
 private var MINIMUM_ASPECT_RATIO: CGFloat {
 	return (1.0/2.0)
 }
-//#define MINIMUM_ASPECT_RATIO (1.0/2.0)
 
 
 @objc final class QLMarkDownGenerator {
@@ -26,10 +25,9 @@ private var MINIMUM_ASPECT_RATIO: CGFloat {
 		}
 		return noErr
 	}
-
+	
 	@objc class func cancelPreviewGeneration(preview: QLPreviewRequest) {
 		// Implement only if supported
-		
 	}
 	
 	@objc(generateThumbnail:forURL:contentTypeUTI:options:maxSize:) class func generateThumbnail(thumbnail: QLThumbnailRequest, url: CFURL, contentTypeUTI: CFString, options: CFDictionary, maxSize: CGSize) -> OSStatus {
@@ -60,9 +58,8 @@ private var MINIMUM_ASPECT_RATIO: CGFloat {
 		
 		return noErr;
 	}
-
+	
 	@objc class func cancelThumbnailGeneration(thumbnail: QLThumbnailRequest) {
 		// Implement only if supported
 	}
-
 }

@@ -4,7 +4,7 @@
 
 NSData* renderMarkdown(NSURL* url)
 {
-    NSString *styles = [NSString stringWithContentsOfFile:[[NSBundle bundleWithIdentifier: @"com.fiatdev.QLMarkdown"]
+    NSString *styles = [[NSString alloc] initWithContentsOfFile:[[NSBundle bundleWithIdentifier: @"com.fiatdev.QLMarkdown"]
                                                            pathForResource:@"styles" ofType:@"css"]
                                                  encoding:NSUTF8StringEncoding
                                                     error:nil];
@@ -12,7 +12,7 @@ NSData* renderMarkdown(NSURL* url)
     NSStringEncoding usedEncoding = 0;
     NSError *e = nil;
 
-    NSString *source = [NSString stringWithContentsOfURL:url usedEncoding:&usedEncoding error:&e];
+    NSString *source = [[NSString alloc] initWithContentsOfURL:url usedEncoding:&usedEncoding error:&e];
 
     if (usedEncoding == 0) {
         NSLog(@"Wasn't able to determine encoding for file “%@”", [url path]);

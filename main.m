@@ -46,7 +46,6 @@ static void CancelThumbnailGeneration(void* thisInterface, QLThumbnailRequestRef
 static OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options);
 static void CancelPreviewGeneration(void *thisInterface, QLPreviewRequestRef preview);
 
-
 // The layout for an instance of QuickLookGeneratorPlugIn
 typedef struct __QuickLookGeneratorPluginType
 {
