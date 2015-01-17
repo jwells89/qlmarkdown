@@ -1,3 +1,4 @@
+#import <Foundation/Foundation.h>
 #include "markdown.h"
 #include "discount-wrapper.h"
 

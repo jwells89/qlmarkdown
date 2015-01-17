@@ -19,7 +19,7 @@ OSStatus GenerateThumbnailForURL(void *thisInterface,
 								 CFURLRef url, CFStringRef contentTypeUTI, 
 								 CFDictionaryRef options, CGSize maxSize)
 {
-    NSData *data = renderMarkdown((NSURL*) url);
+    NSData *data = renderMarkdown((__bridge NSURL*) url);
 
     if (data) {
 		NSRect viewRect = NSMakeRect(0.0, 0.0, 600.0, 800.0);
@@ -29,7 +29,7 @@ OSStatus GenerateThumbnailForURL(void *thisInterface,
                             NSMakeSize((maxSize.width * (600.0/800.0)), 
                                        maxSize.height));
 
-        WebView* webView = [[[WebView alloc] initWithFrame: viewRect] autorelease];
+        WebView* webView = [[WebView alloc] initWithFrame: viewRect];
 		[webView scaleUnitSquareToSize: scaleSize];
         [[[webView mainFrame] frameView] setAllowsScrolling:NO];
         [[webView mainFrame] loadData: data
@@ -50,7 +50,7 @@ OSStatus GenerateThumbnailForURL(void *thisInterface,
 			NSGraphicsContext* nsContext = 
 						[NSGraphicsContext
 							graphicsContextWithGraphicsPort: (void*) context 
-													flipped: [webView isFlipped]];
+													flipped: webView.flipped];
 
 			[webView displayRectIgnoringOpacity: [webView bounds]
 									  inContext: nsContext];

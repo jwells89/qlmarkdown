@@ -12,11 +12,11 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
 							   CFURLRef url, CFStringRef contentTypeUTI, 
 							   CFDictionaryRef options)
 {
-    CFDataRef data = (CFDataRef) renderMarkdown((NSURL*) url);
+    NSData *data = renderMarkdown((__bridge NSURL*) url);
 
     if (data) {
-		CFDictionaryRef props = (CFDictionaryRef) [NSDictionary dictionary];
-        QLPreviewRequestSetDataRepresentation(preview, data, kUTTypeHTML, props);
+		NSDictionary *props = [NSDictionary dictionary];
+        QLPreviewRequestSetDataRepresentation(preview, (__bridge CFDataRef)data, kUTTypeHTML, (__bridge CFDictionaryRef)props);
     }
 
     return noErr;
