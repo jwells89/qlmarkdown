@@ -52,9 +52,9 @@
 		4446CFF20F41899C00BAC3F4 /* discount-wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "discount-wrapper.c"; sourceTree = "<group>"; };
 		4446CFF30F41899C00BAC3F4 /* discount-wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "discount-wrapper.h"; sourceTree = "<group>"; };
 		4446D0230F41AD4700BAC3F4 /* styles.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = styles.css; sourceTree = "<group>"; };
+		553BE86D1A6B0C3400495CCB /* QLMarkdown.exp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.exports; name = QLMarkdown.exp; path = Resources/QLMarkdown.exp; sourceTree = "<group>"; };
 		55469B591A6AFE6700BD0854 /* QLMarkdown-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QLMarkdown-Bridging-Header.h"; sourceTree = "<group>"; };
 		55469B5A1A6AFE6800BD0854 /* QuickLookClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuickLookClass.swift; path = Source/QuickLookClass.swift; sourceTree = "<group>"; };
-		553BE86D1A6B0C3400495CCB /* QLMarkdown.exp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.exports; name = QLMarkdown.exp; path = Resources/QLMarkdown.exp; sourceTree = "<group>"; };
 		8D576316048677EA00EA77CD /* QLMarkdown.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QLMarkdown.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D576317048677EA00EA77CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AB40553E14D008B3009A583A /* blocktags */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = blocktags; sourceTree = "<group>"; };
@@ -378,7 +378,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -392,7 +392,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = macosx;
 				WARNING_CFLAGS = "-Wall";
 			};
