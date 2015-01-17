@@ -93,8 +93,7 @@ QuickLookGeneratorPluginType *AllocQuickLookGeneratorPluginType(CFUUIDRef inFact
 {
     QuickLookGeneratorPluginType *theNewInstance;
 
-    theNewInstance = (QuickLookGeneratorPluginType *)malloc(sizeof(QuickLookGeneratorPluginType));
-    memset(theNewInstance,0,sizeof(QuickLookGeneratorPluginType));
+    theNewInstance = (QuickLookGeneratorPluginType *)calloc(sizeof(QuickLookGeneratorPluginType), 1);
 
         /* Point to the function table Malloc enough to store the stuff and copy the filler from myInterfaceFtbl over */
     theNewInstance->conduitInterface = malloc(sizeof(QLGeneratorInterfaceStruct));
@@ -119,9 +118,7 @@ QuickLookGeneratorPluginType *AllocQuickLookGeneratorPluginType(CFUUIDRef inFact
 //
 void DeallocQuickLookGeneratorPluginType(QuickLookGeneratorPluginType *thisInstance)
 {
-    CFUUIDRef theFactoryID;
-
-    theFactoryID = thisInstance->factoryID;
+    CFUUIDRef theFactoryID = thisInstance->factoryID;
         /* Free the conduitInterface table up */
     free(thisInstance->conduitInterface);
 
@@ -140,9 +137,7 @@ void DeallocQuickLookGeneratorPluginType(QuickLookGeneratorPluginType *thisInsta
 //
 HRESULT QuickLookGeneratorQueryInterface(void *thisInstance,REFIID iid,LPVOID *ppv)
 {
-    CFUUIDRef interfaceID;
-
-    interfaceID = CFUUIDCreateFromUUIDBytes(kCFAllocatorDefault,iid);
+    CFUUIDRef interfaceID = CFUUIDCreateFromUUIDBytes(kCFAllocatorDefault,iid);
 
     if (CFEqual(interfaceID,kQLGeneratorCallbacksInterfaceID)){
             /* If the Right interface was requested, bump the ref count,
@@ -174,8 +169,7 @@ HRESULT QuickLookGeneratorQueryInterface(void *thisInstance,REFIID iid,LPVOID *p
 //
 ULONG QuickLookGeneratorPluginAddRef(void *thisInstance)
 {
-    ((QuickLookGeneratorPluginType *)thisInstance )->refCount += 1;
-    return ((QuickLookGeneratorPluginType*) thisInstance)->refCount;
+    return ++((QuickLookGeneratorPluginType *)thisInstance )->refCount;
 }
 
 // -----------------------------------------------------------------------------
