@@ -54,6 +54,7 @@
 		4446D0230F41AD4700BAC3F4 /* styles.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = styles.css; sourceTree = "<group>"; };
 		55469B591A6AFE6700BD0854 /* QLMarkdown-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QLMarkdown-Bridging-Header.h"; sourceTree = "<group>"; };
 		55469B5A1A6AFE6800BD0854 /* QuickLookClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuickLookClass.swift; path = Source/QuickLookClass.swift; sourceTree = "<group>"; };
+		553BE86D1A6B0C3400495CCB /* QLMarkdown.exp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.exports; name = QLMarkdown.exp; path = Resources/QLMarkdown.exp; sourceTree = "<group>"; };
 		8D576316048677EA00EA77CD /* QLMarkdown.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QLMarkdown.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D576317048677EA00EA77CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AB40553E14D008B3009A583A /* blocktags */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = blocktags; sourceTree = "<group>"; };
@@ -128,6 +129,7 @@
 				8D576317048677EA00EA77CD /* Info.plist */,
 				8D5B49A704867FD3000E48DA /* InfoPlist.strings */,
 				4446D0230F41AD4700BAC3F4 /* styles.css */,
+				553BE86D1A6B0C3400495CCB /* QLMarkdown.exp */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -335,9 +337,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				EXPORTED_SYMBOLS_FILE = Resources/QLMarkdown.exp;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				HEADER_SEARCH_PATHS = "./discount-config";
 				INFOPLIST_FILE = Info.plist;
@@ -346,9 +347,7 @@
 				PRODUCT_NAME = QLMarkdown;
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "QLMarkdown-Bridging-Header.h";
-				VALID_ARCHS = "i386 x86_64";
 				WRAPPER_EXTENSION = qlgenerator;
-				ZERO_LINK = YES;
 			};
 			name = Debug;
 		};
@@ -359,7 +358,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				GCC_MODEL_TUNING = G5;
+				EXPORTED_SYMBOLS_FILE = Resources/QLMarkdown.exp;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				HEADER_SEARCH_PATHS = "./discount-config";
 				INFOPLIST_FILE = Info.plist;
@@ -368,7 +367,6 @@
 				PRODUCT_NAME = QLMarkdown;
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "QLMarkdown-Bridging-Header.h";
-				VALID_ARCHS = "i386 x86_64";
 				WRAPPER_EXTENSION = qlgenerator;
 			};
 			name = Release;
@@ -377,6 +375,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
