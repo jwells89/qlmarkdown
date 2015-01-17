@@ -17,10 +17,6 @@
 				<string>org.vim.markdown-file</string>
 				<string>com.unknown.md</string>
 				<string>com.foldingtext.FoldingText.document</string>
-				<string>dyn.ah62d4rv4ge8043a</string>
-				<string>dyn.ah62d4rv4ge80445e</string>
-				<string>dyn.ah62d4rv4ge8042pwrrwg875s</string>
-				<string>dyn.ah62d4rv4ge8045pe</string>
 			</array>
 		</dict>
 	</array>
@@ -71,7 +67,7 @@
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
-				<string>public.plain-text</string>
+				<string>public.text</string>
 			</array>
 			<key>UTTypeDescription</key>
 			<string>Markdown document</string>
