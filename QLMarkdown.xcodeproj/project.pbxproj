@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A80BFA50E21A2E200C8BF14 /* markdown.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A80BFA40E21A2E200C8BF14 /* markdown.h */; };
-		0A80BFA70E21A2ED00C8BF14 /* markdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A80BFA60E21A2ED00C8BF14 /* markdown.m */; };
 		0A80BFB20E21A90900C8BF14 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A80BFB10E21A90900C8BF14 /* Cocoa.framework */; };
 		0A80BFCC0E21B61A00C8BF14 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A80BFCB0E21B61A00C8BF14 /* WebKit.framework */; };
 		4446D0050F41899C00BAC3F4 /* discount-wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 4446CFF20F41899C00BAC3F4 /* discount-wrapper.c */; };
 		4446D0060F41899C00BAC3F4 /* discount-wrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 4446CFF30F41899C00BAC3F4 /* discount-wrapper.h */; };
 		4446D0240F41AD4700BAC3F4 /* styles.css in Resources */ = {isa = PBXBuildFile; fileRef = 4446D0230F41AD4700BAC3F4 /* styles.css */; };
 		55469B5B1A6AFE6800BD0854 /* QuickLookClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55469B5A1A6AFE6800BD0854 /* QuickLookClass.swift */; };
+		55654A5C1A6B25AA008E9315 /* markdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55654A5B1A6B25AA008E9315 /* markdown.swift */; };
 		8D576312048677EA00EA77CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FB77B6FE84183AC02AAC07 /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D576314048677EA00EA77CD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */; };
 		8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D5B49A704867FD3000E48DA /* InfoPlist.strings */; };
@@ -44,8 +43,6 @@
 /* Begin PBXFileReference section */
 		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		08FB77B6FE84183AC02AAC07 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0A80BFA40E21A2E200C8BF14 /* markdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = markdown.h; sourceTree = "<group>"; };
-		0A80BFA60E21A2ED00C8BF14 /* markdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = markdown.m; sourceTree = "<group>"; };
 		0A80BFB10E21A90900C8BF14 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		0A80BFCB0E21B61A00C8BF14 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 		0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
@@ -55,6 +52,7 @@
 		553BE86D1A6B0C3400495CCB /* QLMarkdown.exp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.exports; name = QLMarkdown.exp; path = Resources/QLMarkdown.exp; sourceTree = "<group>"; };
 		55469B591A6AFE6700BD0854 /* QLMarkdown-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QLMarkdown-Bridging-Header.h"; sourceTree = "<group>"; };
 		55469B5A1A6AFE6800BD0854 /* QuickLookClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuickLookClass.swift; path = Source/QuickLookClass.swift; sourceTree = "<group>"; };
+		55654A5B1A6B25AA008E9315 /* markdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = markdown.swift; path = Source/markdown.swift; sourceTree = "<group>"; };
 		8D576316048677EA00EA77CD /* QLMarkdown.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QLMarkdown.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D576317048677EA00EA77CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AB40553E14D008B3009A583A /* blocktags */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = blocktags; sourceTree = "<group>"; };
@@ -142,8 +140,7 @@
 				4446CFF20F41899C00BAC3F4 /* discount-wrapper.c */,
 				4446CFF30F41899C00BAC3F4 /* discount-wrapper.h */,
 				08FB77B6FE84183AC02AAC07 /* main.m */,
-				0A80BFA40E21A2E200C8BF14 /* markdown.h */,
-				0A80BFA60E21A2ED00C8BF14 /* markdown.m */,
+				55654A5B1A6B25AA008E9315 /* markdown.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -195,7 +192,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A80BFA50E21A2E200C8BF14 /* markdown.h in Headers */,
 				4446D0060F41899C00BAC3F4 /* discount-wrapper.h in Headers */,
 				AB40554414D008B3009A583A /* config.h in Headers */,
 				AB40554514D008B3009A583A /* mkdio.h in Headers */,
@@ -300,11 +296,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D576312048677EA00EA77CD /* main.m in Sources */,
-				0A80BFA70E21A2ED00C8BF14 /* markdown.m in Sources */,
 				4446D0050F41899C00BAC3F4 /* discount-wrapper.c in Sources */,
 				55469B5B1A6AFE6800BD0854 /* QuickLookClass.swift in Sources */,
 				AB40555514D00CCC009A583A /* Csio.c in Sources */,
 				AB40555614D00CCC009A583A /* emmatch.c in Sources */,
+				55654A5C1A6B25AA008E9315 /* markdown.swift in Sources */,
 				AB40555714D00CCC009A583A /* generate.c in Sources */,
 				AB40555814D00CCC009A583A /* html5.c in Sources */,
 				AB40556214D00CFD009A583A /* markdown.c in Sources */,

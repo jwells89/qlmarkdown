@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "discount/markdown.h"
+#include "discount-wrapper.h"
 
 char* convert_markdown_to_string(const char *str)
 {
