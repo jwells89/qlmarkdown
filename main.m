@@ -17,6 +17,8 @@
 #include <CoreServices/CoreServices.h>
 #include <QuickLook/QuickLook.h>
 
+#import "QLMarkdown-Swift.h"
+
 // -----------------------------------------------------------------------------
 //	constants
 // -----------------------------------------------------------------------------
@@ -37,12 +39,13 @@
 // -----------------------------------------------------------------------------
 
 // The thumbnail generation function to be implemented in GenerateThumbnailForURL.c
-OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thumbnail, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options, CGSize maxSize);
-void CancelThumbnailGeneration(void* thisInterface, QLThumbnailRequestRef thumbnail);
+static OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thumbnail, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options, CGSize maxSize);
+static void CancelThumbnailGeneration(void* thisInterface, QLThumbnailRequestRef thumbnail);
 
 // The preview generation function to be implemented in GeneratePreviewForURL.c
-OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options);
-void CancelPreviewGeneration(void *thisInterface, QLPreviewRequestRef preview);
+static OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options);
+static void CancelPreviewGeneration(void *thisInterface, QLPreviewRequestRef preview);
+
 
 // The layout for an instance of QuickLookGeneratorPlugIn
 typedef struct __QuickLookGeneratorPluginType
@@ -216,3 +219,29 @@ void *QuickLookGeneratorPluginFactory(CFAllocatorRef allocator,CFUUIDRef typeID)
     return NULL;
 }
 
+OSStatus GenerateThumbnailForURL(void *thisInterface,
+								 QLThumbnailRequestRef thumbnail,
+								 CFURLRef url, CFStringRef contentTypeUTI,
+								 CFDictionaryRef options, CGSize maxSize)
+{
+	return [QLMarkDownGenerator generateThumbnail:thumbnail forURL:url contentTypeUTI:contentTypeUTI options:options maxSize:maxSize];
+}
+
+void CancelThumbnailGeneration(void* thisInterface, QLThumbnailRequestRef thumbnail)
+{
+	//[QLMarkDownGenerator cancelThumbnailGeneration:thumbnail];
+	// implement only if supported
+}
+
+OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
+							   CFURLRef url, CFStringRef contentTypeUTI,
+							   CFDictionaryRef options)
+{
+	return [QLMarkDownGenerator generatePreview:preview forURL:url contentTypeUTI:contentTypeUTI options:options];
+}
+
+void CancelPreviewGeneration(void* thisInterface, QLPreviewRequestRef preview)
+{
+	//[QLMarkDownGenerator cancelPreviewGeneration:preview];
+	// implement only if supported
+}
