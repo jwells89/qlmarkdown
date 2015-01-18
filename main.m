@@ -16,6 +16,7 @@
 #include <CoreFoundation/CFPlugInCOM.h>
 #include <CoreServices/CoreServices.h>
 #include <QuickLook/QuickLook.h>
+#import <Foundation/Foundation.h>
 
 #import "QLMarkdown-Swift.h"
 
