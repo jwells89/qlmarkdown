@@ -1,7 +1,7 @@
-#import <QuickLook/QuickLook.h>
+#include <QuickLook/QuickLook.h>
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
-#include "markdown.h"
+#import "markdown.h"
 
 /* -----------------------------------------------------------------------------
     Generate a thumbnail for file
@@ -19,6 +19,7 @@ OSStatus GenerateThumbnailForURL(void *thisInterface,
 								 CFURLRef url, CFStringRef contentTypeUTI, 
 								 CFDictionaryRef options, CGSize maxSize)
 {
+    @autoreleasepool {
     NSData *data = renderMarkdown((__bridge NSURL*) url);
 
     if (data) {
@@ -26,7 +27,7 @@ OSStatus GenerateThumbnailForURL(void *thisInterface,
 		CGFloat scale = maxSize.height / 800.0;
 		NSSize scaleSize = NSMakeSize(scale, scale);
 		CGSize thumbSize = NSMakeSize((maxSize.width * (600.0/800.0)),
-									  maxSize.height);
+                                      maxSize.height);
 
         WebView* webView = [[WebView alloc] initWithFrame: viewRect];
 		[webView scaleUnitSquareToSize: scaleSize];
@@ -61,6 +62,7 @@ OSStatus GenerateThumbnailForURL(void *thisInterface,
     }
 
     return noErr;
+    }
 }
 
 void CancelThumbnailGeneration(void* thisInterface, QLThumbnailRequestRef thumbnail)

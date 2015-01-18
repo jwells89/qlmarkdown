@@ -110,6 +110,7 @@
 			);
 			name = QLMarkdown;
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		089C1671FE841209C02AAC07 /* External Frameworks and Libraries */ = {
 			isa = PBXGroup;

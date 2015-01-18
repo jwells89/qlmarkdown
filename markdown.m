@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#include "markdown.h"
+#import "markdown.h"
 #include "discount-wrapper.h"
 
 NSData* renderMarkdown(NSURL* url)
