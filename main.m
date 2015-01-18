@@ -217,7 +217,9 @@ OSStatus GenerateThumbnailForURL(void *thisInterface,
 								 CFURLRef url, CFStringRef contentTypeUTI,
 								 CFDictionaryRef options, CGSize maxSize)
 {
-	return [QLMarkDownGenerator generateThumbnail:thumbnail forURL:url contentTypeUTI:contentTypeUTI options:options maxSize:maxSize];
+    @autoreleasepool {
+        return [QLMarkDownGenerator generateThumbnail:thumbnail forURL:url contentTypeUTI:contentTypeUTI options:options maxSize:maxSize];
+    }
 }
 
 void CancelThumbnailGeneration(void* thisInterface, QLThumbnailRequestRef thumbnail)
@@ -230,7 +232,9 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
 							   CFURLRef url, CFStringRef contentTypeUTI,
 							   CFDictionaryRef options)
 {
-	return [QLMarkDownGenerator generatePreview:preview forURL:url contentTypeUTI:contentTypeUTI options:options];
+    @autoreleasepool {
+        return [QLMarkDownGenerator generatePreview:preview forURL:url contentTypeUTI:contentTypeUTI options:options];
+    }
 }
 
 void CancelPreviewGeneration(void* thisInterface, QLPreviewRequestRef preview)
